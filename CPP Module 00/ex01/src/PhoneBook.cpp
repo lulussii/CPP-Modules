@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 15:10:48 by lserodon          #+#    #+#             */
-/*   Updated: 2025/06/25 13:48:30 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:03:19 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	PhoneBook::addNewContact()
 	maxContacts = 8;
 	if (count >= maxContacts)
 	{
-		std::cout << "Your phonebook is full.\n";
+		std::cout << HOT_PINK << "Your phonebook is full.\n" << RESET;
 		std::cout << "Adding a new contact will overwrite the oldest one.\n";
 		std::cout << "Do you want to continue? (y/n)\n";
 		getline(std::cin, force_contact);
 		if (force_contact != "y" && force_contact != "Y")
 		{
-			std::cout << "Contact not added.\n";
+			std::cout << HOT_PINK << "Contact not added.\n" << RESET;
 			return ;		
 		}
 		i = count % maxContacts;
@@ -39,7 +39,7 @@ void	PhoneBook::addNewContact()
 		count++;
 	}
 	contacts[i].askInfo();
-	std::cout << "New contact succesfully added at slot #" << i + 1 << "!\n";
+	std::cout << HOT_PINK <<"New contact succesfully added at slot #" << i + 1 << "!\n" << RESET;
 }
 
 void	PhoneBook::searchContact()
@@ -48,10 +48,10 @@ void	PhoneBook::searchContact()
 
 	while (true)
 	{
-		std::cout << "Enter an index:";
+		std::cout << SOFT_PINK << "Enter an index:" << RESET;
 		getline(std::cin, input);
 		if ((input.size()) != 1 || (input[0] <= '0' || input[0] > (count + '0')))
-			std::cout << "Wrong index. Please retry\n"; 
+			std::cout << HOT_PINK << "Wrong index. Please retry\n" << RESET; 
 		else
 		{
 			contacts[(input[0] - '0') - 1].displayContactDetails();
@@ -65,22 +65,22 @@ void	PhoneBook::displayContact()
 	int i;
 
 	i = 0;
-	std::cout << "|-------------------------------------------|\n";
-	std::cout << "|  Index   |First Name| Last Name| Nickname |\n";
-	std::cout << "|----------|----------|----------|----------|\n";
+	std::cout << "╔═══════════════════════════════════════════╗\n";
+	std::cout << "║  Index   |First Name| Last Name| Nickname ║\n";
+	std::cout << "║----------|----------|----------|----------║\n";
 	while(i < count)
 	{
 		contacts[i].displayContactSummary(i);
 		i++;		
 	}
-	std::cout << "|-------------------------------------------|\n\n";
+	std::cout << "╚═══════════════════════════════════════════╝\n\n";
 	searchContact();
 }
 
 void	PhoneBook::searchCommand()
 {
 	if (count == 0)
-			std::cout << "Your phonebook is empty ! Add a new contact with the command ADD.\n";
+			std::cout << HOT_PINK <<"Your phonebook is empty ! Add a new contact with the command ADD.\n" << RESET;
 	else
 		displayContact();
 }
@@ -90,9 +90,10 @@ int	main(void)
 	std::string entry;
 	PhoneBook phoneBook;
 
+	welcomeMessage();
 	while (true)
 	{
-		std::cout << "Enter a command > ";
+		std::cout << SOFT_PINK << "Enter a command > " << RESET;
 		std::getline(std::cin, entry);
 		if (entry == "EXIT")
 		{
@@ -108,6 +109,6 @@ int	main(void)
 			phoneBook.searchCommand();
 		}
 		else
-			std::cout << "Wrong entry. Please retry\n";
+			std::cout << HOT_PINK << "Wrong entry. Please retry\n" << RESET;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 10:56:04 by lserodon          #+#    #+#             */
-/*   Updated: 2025/06/25 13:42:11 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:39:31 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include "Contact.hpp"
+#include "PhoneBookUtils.hpp"
 
 class PhoneBook {
 	private:

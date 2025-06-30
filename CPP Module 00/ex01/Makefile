@@ -3,8 +3,9 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude -g
 SRC_DIR = src
 OBJ_DIR = build
 
-SRCS = $(SRC_DIR)/PhoneBook.cpp \
-	   $(SRC_DIR)/Contact.cpp
+SRCS = 	$(SRC_DIR)/PhoneBook.cpp \
+		$(SRC_DIR)/Contact.cpp \
+	   	$(SRC_DIR)/PhoneBookUtils.cpp
 
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
