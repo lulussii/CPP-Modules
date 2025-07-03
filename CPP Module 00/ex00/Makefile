@@ -1,14 +1,27 @@
 CC = g++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = megaphone.cpp
-OBJS = $(SRCS:.cpp=.o)
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude -g
+SRC_DIR = src
+OBJ_DIR = build
+
+SRCS = 	$(SRC_DIR)/Megaphone.cpp
+
+OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
 NAME = megaphone
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CPPFLAGS) -o $@ $^
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	$(CC) $(CPPFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)

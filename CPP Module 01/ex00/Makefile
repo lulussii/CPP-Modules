@@ -10,7 +10,7 @@ SRCS = 	$(SRC_DIR)/main.cpp \
 		
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME = Zombie
+NAME = zombie
 
 all: $(NAME)
 

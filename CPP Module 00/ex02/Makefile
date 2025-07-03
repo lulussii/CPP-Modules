@@ -8,7 +8,7 @@ SRCS = $(SRC_DIR)/tests.cpp \
 
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME = phoneBook
+NAME = account
 
 all: $(NAME)
 

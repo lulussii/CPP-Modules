@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:13:08 by lserodon          #+#    #+#             */
-/*   Updated: 2025/06/30 15:25:37 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/01 11:18:25 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ class Zombie {
 		std::string name;
 
 	public :
-	void	announce();
-	Zombie(std::string name);
-	~Zombie(void);
+		void	announce();
+		Zombie(std::string name);
+		~Zombie(void);
 };
+
+Zombie *newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

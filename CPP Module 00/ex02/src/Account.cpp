@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 08:05:03 by lserodon          #+#    #+#             */
-/*   Updated: 2025/06/26 14:37:55 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/01 10:32:54 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,26 @@ int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
+
+int	Account::getNbAccounts(void)
+{
+	return(_nbAccounts);
+}
+
+int Account::getTotalAmount(void)
+{
+	return(_totalAmount);
+}
+
+int Account::getNbDeposits(void)
+{
+	return(_totalNbDeposits);
+}
+
+int Account::getNbWithdrawals(void)
+{
+	return (_totalNbWithdrawals);
+}
 
 int	Account::checkAmount() const
 {
@@ -59,10 +79,10 @@ Account::~Account()
 void	Account::displayAccountsInfos (void)
 {
 	_displayTimestamp();
-	std::cout	<< "accounts:" << _nbAccounts << ";"
-				<< "total:" << _totalAmount << ";"
-				<< "deposits:" << _totalNbDeposits << ";"
-				<< "withdrawals:" << _totalNbWithdrawals << "\n";
+	std::cout	<< "accounts:" << getNbAccounts() << ";"
+				<< "total:" << getTotalAmount() << ";"
+				<< "deposits:" << getNbDeposits() << ";"
+				<< "withdrawals:" << getNbWithdrawals() << "\n";
 }
 
 void	Account::displayStatus(void) const 
