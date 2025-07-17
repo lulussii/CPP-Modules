@@ -6,12 +6,12 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:25:18 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 10:12:33 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/15 09:54:37 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBookUtils.hpp"
+#include "../include/Contact.hpp"
+#include "../include/PhoneBookUtils.hpp"
 
 std::string	Contact::askForField(const std::string& fieldName)
 {

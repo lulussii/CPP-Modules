@@ -6,11 +6,11 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 15:10:48 by lserodon          #+#    #+#             */
-/*   Updated: 2025/06/30 16:03:19 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/15 09:54:46 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "../include/PhoneBook.hpp"
 
 void	PhoneBook::addNewContact()
 {
