@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -Iinclude -g
 SRC_DIR = src
 OBJ_DIR = build
