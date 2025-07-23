@@ -1,2 +1,21 @@
 build/
 *.o
+
+# EXECUTABLE
+megaphone
+phoneBook
+account
+zombie
+horde
+brain
+attack
+replace
+harl
+harlFilter
+fixed
+bsp
+claptrap
+scavtrap
+fragtrap
+diamondtrap
+animal
