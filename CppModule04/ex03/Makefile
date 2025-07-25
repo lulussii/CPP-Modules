@@ -4,10 +4,15 @@ SRC_DIR = src
 OBJ_DIR = build
 
 SRCS = 	$(SRC_DIR)/main.cpp \
+		$(SRC_DIR)/AMateria.cpp \
+		$(SRC_DIR)/Character.cpp \
+		$(SRC_DIR)/Cure.cpp \
+		$(SRC_DIR)/Ice.cpp \
+		$(SRC_DIR)/MateriaSource.cpp
 
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME = animal
+NAME = materia
 
 all: $(NAME)
 
