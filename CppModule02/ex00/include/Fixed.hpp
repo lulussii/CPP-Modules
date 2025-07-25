@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:12:24 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/15 10:23:06 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:13:38 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 class Fixed {
 	private:
-		int _rawBits;
-		static const int _fractionnalBits = 8;
+		int 				_rawBits;
+		static const int	_fractionnalBits = 8;
 
 	public:
 		Fixed();
 		~Fixed();
 		Fixed(const Fixed& autre);
-		Fixed& operator=(const Fixed& autre);
-		int getRawBits(void) const;
+		Fixed& 	operator=(const Fixed& autre);
+		int 	getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
 

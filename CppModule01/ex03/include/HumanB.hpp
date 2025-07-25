@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:32:34 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/02 08:18:50 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:17:41 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ class HumanB
 {
 	private :
 		std::string _name;
-		Weapon	 	*_weapon;
+		Weapon		*_weapon;
 
 	public:
 		HumanB(std::string name);
-		void setWeapon(Weapon &weapon);
-		void attack(void) const;
+		
+		void		setWeapon(Weapon &weapon);
+		void		attack(void) const;
 };
 
 #endif

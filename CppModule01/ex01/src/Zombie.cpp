@@ -6,28 +6,28 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:18:45 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 14:48:54 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:19:30 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie()
 {
-	std::cout << "🧟 A zombie has joined the horde!\n";
+	std::cout << "A zombie has joined the horde!\n";
 }
 
-Zombie::~Zombie(void)
+Zombie::~Zombie()
 {
-	std::cout << "💀 " << name << " has fallen...\n";
+	std::cout << _name << " has fallen...\n";
 }
 
 void Zombie::setName(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 }
 
-void	Zombie::announce(void)
+void	Zombie::announce()
 {
-	std::cout << name << ": BraiiiiiiinzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinzzzZ...\n";
 }

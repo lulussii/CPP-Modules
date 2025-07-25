@@ -3,7 +3,8 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude -g
 SRC_DIR = src
 OBJ_DIR = build
 
-SRCS = 	$(SRC_DIR)/main.cpp
+SRCS = 	$(SRC_DIR)/main.cpp \
+		$(SRC_DIR)/replace.cpp
 	
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

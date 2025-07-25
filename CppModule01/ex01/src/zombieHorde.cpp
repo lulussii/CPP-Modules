@@ -6,13 +6,13 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:15:51 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 14:49:00 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:17:13 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name )
+Zombie* zombieHorde(int N, std::string name)
 {
 	int		i;
 	Zombie	*horde;
@@ -27,9 +27,7 @@ Zombie* zombieHorde( int N, std::string name )
 		std::cout << "Allocation of the horde failed.\n";
 	while (i < N)
 	{
-		std::stringstream ss;
-		ss << name << "#" << i + 1;
-		horde[i].setName(ss.str());
+		horde[i].setName(name);
 		i++;
 	}
 	return (horde);

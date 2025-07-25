@@ -4,9 +4,8 @@ SRC_DIR = src
 OBJ_DIR = build
 
 SRCS = 	$(SRC_DIR)/PhoneBook.cpp \
-		$(SRC_DIR)/Contact.cpp \
-	   	$(SRC_DIR)/PhoneBookUtils.cpp
-
+		$(SRC_DIR)/Contact.cpp 
+		
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 NAME = phoneBook

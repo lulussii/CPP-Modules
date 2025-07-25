@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:12:00 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 10:52:10 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:00:45 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void randomChump(std::string name)
 {
-	Zombie zombieStack(name);
-	zombieStack.announce();
+	Zombie z = Zombie(name);
+	z.announce();
 }

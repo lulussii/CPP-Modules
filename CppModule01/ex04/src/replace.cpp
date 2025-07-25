@@ -6,35 +6,29 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:00:14 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/02 11:02:02 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:09:56 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#include "../include/replace.hpp"
 
-std::string replaceInLine(std::string line, std::string s1, std::string s2)
+std::string replaceInLine(const std::string& line, const std::string& s1, const std::string& s2)
 {
 	std::string result;
-	size_t i;
+	size_t pos = 0;
+	size_t found;
 	
-	i = 0;
-	while(i < line.size())
+	while ((found = line.find(s1, pos)) != std::string::npos)
 	{
-		if (line.substr(i, s1.size()) == s1)
-		{
-			result += s2;
-			i += s1.size();
-		}
-		else
-		{
-			result += line[i];
-			i++;
-		}
+		result += line.substr(pos, found - pos);
+		result += s2;
+		pos = found + s1.length();
 	}
+	result += line.substr(pos);
 	return (result);
 }
 
-void	replace(std::string _file, std::string s1, std::string s2)
+void	ft_replace(std::string _file, std::string s1, std::string s2)
 {
 	std::ifstream file(_file.c_str());
 	std::string newFileName = _file + ".replace";
@@ -42,7 +36,7 @@ void	replace(std::string _file, std::string s1, std::string s2)
 	if (!file)
 	{
 		std::cerr << "The file doesn't exist" << std::endl;
-		exit(1);
+		exit (1);
 	}
 	std::ofstream newFile(newFileName.c_str());
 	if (!newFile)
@@ -57,4 +51,6 @@ void	replace(std::string _file, std::string s1, std::string s2)
 		result = replaceInLine(line, s1, s2);
 		newFile << result << std::endl;
 	}
+	newFile.close();
+	file.close();
 }

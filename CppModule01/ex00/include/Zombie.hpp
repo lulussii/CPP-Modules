@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:13:08 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 11:18:25 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:15:16 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 
 class Zombie {
 	private :
-		std::string name;
+		std::string _name;
 
 	public :
-		void	announce();
 		Zombie(std::string name);
+		
 		~Zombie(void);
+		
+		void		announce();
 };
 
 Zombie *newZombie(std::string name);

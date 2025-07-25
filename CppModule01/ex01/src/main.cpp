@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:20:03 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 14:48:46 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:18:36 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 
 	n = 5;
 	i = 0;
-	horde = zombieHorde(n, "Horde member");
+	horde = zombieHorde(n, "Zombie");
 	while (i < n)
 	{
 		horde[i].announce();

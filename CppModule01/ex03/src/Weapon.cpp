@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:31:42 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 16:12:31 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:27:50 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ Weapon::Weapon()
 	return ;
 }
 
-Weapon::Weapon(std::string type) : type(type)
+Weapon::Weapon(std::string type) : _type(type)
 {
 	return ;
 }
 
 void Weapon::setType(std::string type)
 {
-	this->type = type;
+	this->_type = type;
 }
 
 std::string const &Weapon::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }

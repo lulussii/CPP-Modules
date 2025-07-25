@@ -6,12 +6,12 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:25:18 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/15 09:54:37 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 11:32:26 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Contact.hpp"
-#include "../include/PhoneBookUtils.hpp"
+#include "../include/PhoneBook.hpp"
 
 std::string	Contact::askForField(const std::string& fieldName)
 {
@@ -29,11 +29,11 @@ std::string	Contact::askForField(const std::string& fieldName)
 
 void	Contact::askInfo()
 {
-	firstName = askForField("first name");
-	lastName = askForField("last name");
-	nickName = askForField("nick name");
-	phoneNumber = askForField("phone number");
-	darkestSecret = askForField("darkest secret");
+	_firstName = askForField("first name");
+	_lastName = askForField("last name");
+	_nickName = askForField("nick name");
+	_phoneNumber = askForField("phone number");
+	_darkestSecret = askForField("darkest secret");
 }
 
 std::string Contact::truncateField(const std::string& str) const {
@@ -43,17 +43,18 @@ std::string Contact::truncateField(const std::string& str) const {
 		return std::string(10 - str.length(), ' ') + str;
 }
 
-void	Contact::displayContactSummary(int index) const {
-	std::cout << "║" << std::string(9, ' ') << index + 1
-			  << "|" << truncateField(firstName)
-			  << "|" << truncateField(lastName)
-			  << "|" << truncateField(nickName) << "║\n";
+void Contact::displayContactSummary(int index) const {
+	std::cout << "║"
+	          << std::setw(10) << index + 1 << "│"
+	          << std::setw(10) << truncateField(_firstName) << "│"
+	          << std::setw(10) << truncateField(_lastName) << "│"
+	          << std::setw(10) << truncateField(_nickName) << "║\n";
 }
 
 void	Contact::displayContactDetails() const {
-	std::cout << "First Name: " << firstName << "\n";
-	std::cout << "Last Name: " << lastName << "\n";
-	std::cout << "Nickname: " << nickName << "\n";
-	std::cout << "Phone Number: " << phoneNumber << "\n";
-	std::cout << "Darkest Secret: " << darkestSecret << "\n";
+	std::cout << "First Name: " << _firstName << "\n";
+	std::cout << "Last Name: " << _lastName << "\n";
+	std::cout << "Nickname: " << _nickName << "\n";
+	std::cout << "Phone Number: " << _phoneNumber << "\n";
+	std::cout << "Darkest Secret: " << _darkestSecret << "\n";
 }

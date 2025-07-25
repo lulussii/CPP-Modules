@@ -6,11 +6,34 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 15:10:48 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/15 09:54:46 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/25 09:35:00 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/PhoneBook.hpp"
+
+PhoneBook::PhoneBook() : _count(0)
+{
+	std::cout << PINK << std::endl;
+	std::cout << "╔══════════════════════════════════════════════╗" << std::endl;
+	std::cout << "║        💖 WELCOME TO YOUR PHONEBOOK 💖       ║" << std::endl;
+	std::cout << "╠══════════════════════════════════════════════╣" << std::endl;
+	std::cout << "║ AVAILABLE COMMANDS:                          ║" << std::endl;
+	std::cout << "║   ADD    → Add a new contact                 ║" << std::endl;
+	std::cout << "║   SEARCH → Search & display your contacts    ║" << std::endl;
+	std::cout << "║   EXIT   → Exit the program                  ║" << std::endl;
+	std::cout << "╚══════════════════════════════════════════════╝" << std::endl;
+	std::cout << RESET << std::endl;
+}
+
+PhoneBook::~PhoneBook()
+{
+	std::cout << PINK << std::endl;
+	std::cout << "╔══════════════════════════════════════════════╗" << std::endl;
+	std::cout << "║        💖         GOODBYE !         💖       ║" << std::endl;
+	std::cout << "╚══════════════════════════════════════════════╝" << std::endl;
+	std::cout << RESET << std::endl;
+}
 
 void	PhoneBook::addNewContact()
 {
@@ -20,7 +43,7 @@ void	PhoneBook::addNewContact()
 	
 	i = 0;
 	maxContacts = 8;
-	if (count >= maxContacts)
+	if (_count >= maxContacts)
 	{
 		std::cout << HOT_PINK << "Your phonebook is full.\n" << RESET;
 		std::cout << "Adding a new contact will overwrite the oldest one.\n";
@@ -31,14 +54,14 @@ void	PhoneBook::addNewContact()
 			std::cout << HOT_PINK << "Contact not added.\n" << RESET;
 			return ;		
 		}
-		i = count % maxContacts;
+		i = _count % maxContacts;
 	}
 	else
 	{
-		i = count;		
-		count++;
+		i = _count;		
+		_count++;
 	}
-	contacts[i].askInfo();
+	_contacts[i].askInfo();
 	std::cout << HOT_PINK <<"New contact succesfully added at slot #" << i + 1 << "!\n" << RESET;
 }
 
@@ -50,11 +73,11 @@ void	PhoneBook::searchContact()
 	{
 		std::cout << SOFT_PINK << "Enter an index:" << RESET;
 		getline(std::cin, input);
-		if ((input.size()) != 1 || (input[0] <= '0' || input[0] > (count + '0')))
+		if ((input.size()) != 1 || (input[0] <= '0' || input[0] > (_count + '0')))
 			std::cout << HOT_PINK << "Wrong index. Please retry\n" << RESET; 
 		else
 		{
-			contacts[(input[0] - '0') - 1].displayContactDetails();
+			_contacts[(input[0] - '0') - 1].displayContactDetails();
 			break;
 		}
 	}
@@ -68,9 +91,9 @@ void	PhoneBook::displayContact()
 	std::cout << "╔═══════════════════════════════════════════╗\n";
 	std::cout << "║  Index   |First Name| Last Name| Nickname ║\n";
 	std::cout << "║----------|----------|----------|----------║\n";
-	while(i < count)
+	while(i < _count)
 	{
-		contacts[i].displayContactSummary(i);
+		_contacts[i].displayContactSummary(i);
 		i++;		
 	}
 	std::cout << "╚═══════════════════════════════════════════╝\n\n";
@@ -79,7 +102,7 @@ void	PhoneBook::displayContact()
 
 void	PhoneBook::searchCommand()
 {
-	if (count == 0)
+	if (_count == 0)
 			std::cout << HOT_PINK <<"Your phonebook is empty ! Add a new contact with the command ADD.\n" << RESET;
 	else
 		displayContact();
@@ -90,14 +113,12 @@ int	main(void)
 	std::string entry;
 	PhoneBook phoneBook;
 
-	welcomeMessage();
 	while (true)
 	{
 		std::cout << SOFT_PINK << "Enter a command > " << RESET;
 		std::getline(std::cin, entry);
 		if (entry == "EXIT")
 		{
-			std::cout << "Goodbye !\n";
 			break;
 		}
 		else if (entry == "ADD")
