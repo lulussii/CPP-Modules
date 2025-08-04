@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:29:26 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/17 09:51:18 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/30 14:30:05 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main( void )
     Point b(10, 0);
     Point c(0, 10);
 
-    Point p(5, 4);
+    Point p(0, 0);
 
     std::cout << "Test avec le point p de coordonnées : " << p.getX() << "," << p.getY() << std::endl;
     if (bsp(a, b, c, p))

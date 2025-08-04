@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:06:02 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 09:16:47 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/08/04 15:11:57 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 class Animal 
 {
 	protected :
-		std::string type;
+		std::string _type;
 		
 	public :
 		Animal();
 		Animal(const Animal& other);
 
-		~Animal();
+		virtual ~Animal();
 
-		Animal& operator=(const Animal& other);
+		Animal& 		operator=(const Animal& other);
 		virtual void	makeSound() const;
-		std::string getType() const;
+		std::string		getType() const;
 };
 
 #endif

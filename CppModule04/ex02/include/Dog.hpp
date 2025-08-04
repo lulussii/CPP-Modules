@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:31:29 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 11:22:08 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/08/04 16:45:40 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class Dog : public Animal
 
 		Dog& operator=(const Dog& other);
 		void	makeSound() const;
+
+		void		setIdea(std::string idea, int index);
+		std::string	getIdea(int index) const;
 };
 
 #endif

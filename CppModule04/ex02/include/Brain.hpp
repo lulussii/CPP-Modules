@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 11:14:37 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 11:49:48 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/08/04 16:47:35 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Brain
 		
 		Brain& operator=(const Brain& other);
 
-		const std::string &getIdea(int index) const;
-		void	setIdea(std::string idea, int index);
+		const std::string	&getIdea(int index) const;
+		void				setIdea(std::string idea, int index);
 };
 
 #endif

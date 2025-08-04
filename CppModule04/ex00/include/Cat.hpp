@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:31:29 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 09:11:04 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/31 14:38:45 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal
 
 		~Cat();
 
-		Cat& operator=(const Cat& other);
+		Cat& 	operator=(const Cat& other);
 		void	makeSound() const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:38:00 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 08:52:48 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/08/04 15:13:13 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Dog::Dog() : Animal()
 {
-	this->type = "Dog";
+	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-	this->type = other.type;
+	this->_type = other._type;
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
@@ -32,7 +32,7 @@ Dog::~Dog()
 Dog& Dog::operator=(const Dog& other)
 {
 	if (this != &other)
-		this->type = other.type;
+		this->_type = other._type;
 	return *this;
 }
 

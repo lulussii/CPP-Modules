@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:31:29 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 10:04:20 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/31 14:38:38 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class WrongCat : public WrongAnimal
 
 		~WrongCat();
 
-		WrongCat& operator=(const WrongCat& other);
-		void	makeSound() const;
+		WrongCat& 	operator=(const WrongCat& other);
+		void		makeSound() const;
 };
 
 #endif

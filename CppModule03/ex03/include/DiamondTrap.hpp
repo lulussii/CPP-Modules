@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:14:23 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/21 16:33:30 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:55:54 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		
 		void	whoAmI();
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 };
 
 #endif

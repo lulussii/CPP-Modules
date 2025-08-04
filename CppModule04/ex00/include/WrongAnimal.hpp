@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:06:02 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 10:04:11 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/08/04 15:12:05 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 class WrongAnimal 
 {
 	protected :
-		std::string type;
+		std::string _type;
 		
 	public :
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal& other);
 
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 
-		WrongAnimal& operator=(const WrongAnimal& other);
-		void	makeSound() const;
-		std::string getType() const;
+		WrongAnimal&	operator=(const WrongAnimal& other);
+		void			makeSound() const;
+		std::string 	getType() const;
 };
 
 #endif

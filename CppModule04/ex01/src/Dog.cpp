@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:38:00 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/22 12:11:52 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/08/04 16:28:03 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,12 @@ void	Dog::makeSound() const
 	std::cout << "Bark bark!" << std::endl;
 }
 
+void	Dog::setIdea(std::string idea, int index)
+{
+	this->_brain->setIdea(idea, index);
+}
+
+std::string Dog::getIdea(int index) const
+{
+	return (this->_brain->getIdea(index));
+}

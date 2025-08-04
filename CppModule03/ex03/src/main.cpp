@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:44:08 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/21 16:41:30 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:56:46 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,22 @@
 #include "../include/DiamondTrap.hpp"
 
 int main() {
-    DiamondTrap dt1("Lucie");
-    dt1.attack("le méchant ennemi");
-    dt1.whoAmI();
 
-    std::cout << "\n--- Copie et assignation ---" << std::endl;
-    DiamondTrap dt2(dt1);       // test du constructeur de copie
-    dt2.whoAmI();
+	std::cout << "----- CONSTRUCTION ------" << std::endl;
+	
+	DiamondTrap a;
+	DiamondTrap b("Cody");
 
-    DiamondTrap dt3;
-    dt3 = dt1;                  // test de l'opérateur d'assignation
-    dt3.whoAmI();
-
-    return 0;
+	std::cout << "\n----- TESTING -----" << std::endl;
+	
+	a.attack("some other robot");
+	a.attack("some other other robot");
+	b.whoAmI();
+	for (int i = 0; i < 4; i++)
+		b.attack("Cody-clone");
+	b.highFivesGuys();
+	
+	std::cout << "\n----- DECONSTRUCTION -----" << std::endl;
+	
+	return (0);
 }
