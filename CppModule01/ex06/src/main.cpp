@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 09:31:25 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/03 09:50:00 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/10/25 12:44:23 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	
 	if (argc != 2)
 	{
-		std::cerr << "Wrong number of args\n";
+		std::cout << "Wrong number of args\n";
 		return (1);
 	}
 	else

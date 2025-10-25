@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:15:51 by lserodon          #+#    #+#             */
-/*   Updated: 2025/10/19 10:55:31 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/10/25 12:48:39 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Zombie* zombieHorde(int N, std::string name)
 	if (N < 1)
 	{
 		std::cout << "A horde need at least 2 zombies\n";
+		return (NULL);
 	}
 	horde = new Zombie[N];
 	if (!horde)

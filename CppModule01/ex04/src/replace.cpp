@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:00:14 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/30 12:11:01 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/10/25 13:16:52 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ std::string replaceInLine(const std::string& line, const std::string& s1, const 
 	size_t pos = 0;
 	size_t found;
 	
+	if (s1 == "" || s1 == s2)
+		return (line);
 	while ((found = line.find(s1, pos)) != std::string::npos)
 	{
 		result += line.substr(pos, found - pos);
@@ -35,13 +37,13 @@ void	ft_replace(std::string _file, std::string s1, std::string s2)
 
 	if (!file)
 	{
-		std::cerr << "The file doesn't exist" << std::endl;
+		std::cout << "The file doesn't exist" << std::endl;
 		exit (1);
 	}
 	std::ofstream newFile(newFileName.c_str());
 	if (!newFile)
 	{
-		std::cerr << "An error occured" << std::endl;
+		std::cout << "An error occured" << std::endl;
 		exit (1);
 	}
 	std::string line;
