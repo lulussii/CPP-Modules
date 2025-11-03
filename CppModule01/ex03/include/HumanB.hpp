@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:32:34 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/25 15:17:41 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:24:55 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define HUMANB_HPP
 
 #include <iostream>
-#include <cstring>
+#include <string>
 #include "Weapon.hpp"
 
 class HumanB

@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:55:20 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 14:25:09 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:02:56 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main(void)
 	std::string *stringPTR = &str;
 	std::string	&stringREF = str;
 
-	std::cout << "Memory adress of the string:\t\t" << &str << std::endl;
-	std::cout << "Memory adress held by stringPTR:\t" << stringPTR << std::endl;
-	std::cout << "Memory adress held by stringREF:\t" << &stringREF << std::endl;
+	std::cout << "Adress of str:\t\t" << &str << std::endl;
+	std::cout << "Adress via pointer:\t" << stringPTR << std::endl;
+	std::cout << "Adress via reference:\t" << &stringREF << std::endl;
 	std::cout << "-------------------------------\n";
 	std::cout << "Value of the string:\t\t" << str << std::endl;
 	std::cout << "Value pointed by stringPTR:\t"<< *stringPTR << std::endl;
-	std::cout << "Value pointed by stringREF:\t" << stringREF << std::endl;
+	std::cout << "Value referred to by stringREF:\t" << stringREF << std::endl;
 } 

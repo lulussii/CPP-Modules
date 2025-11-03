@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 08:43:13 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/03 09:16:20 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:46:40 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ int main(void)
 	harl.complain("INFO");
 	std::cout << std::endl;
 	harl.complain("SILENT");
-	std::cout << std::endl;
 }

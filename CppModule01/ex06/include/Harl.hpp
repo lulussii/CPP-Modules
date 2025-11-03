@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 09:31:37 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/03 09:32:35 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:48:02 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define HARL_HPP
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 class Harl
 {

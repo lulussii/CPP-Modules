@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:13:08 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/25 15:15:16 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:06:03 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Zombie {
 		
 		~Zombie(void);
 		
-		void		announce();
+		void		announce() const;
 };
 
 Zombie *newZombie(std::string name);

@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:32:32 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/25 15:17:46 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:24:07 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define WEAPON_HPP
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 class Weapon 
 {

@@ -6,12 +6,11 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 09:31:55 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/30 13:31:23 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:50:10 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-
 
 void	Harl::debug(void)
 {
@@ -47,26 +46,28 @@ void	Harl::complain(std::string level)
 {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void	(Harl::*functions[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	int 	i = 0;
 	int 	index = -1;
 
-	while (i < 4)
+	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
+		{
 			index = i;
-		i++;
+			break;
+		}
 	}
+	
 	switch (index)
 	{
 		case 0:
 			(this->*functions[0])();
-			//fall through
+			//fallthrough
 		case 1:
 			(this->*functions[1])();;
-			//fall through
+			//fallthrough
 		case 2:
 			(this->*functions[2])();;
-			//fall through
+			//fallthrough
 		case 3:
 			(this->*functions[3])();;
 			break;

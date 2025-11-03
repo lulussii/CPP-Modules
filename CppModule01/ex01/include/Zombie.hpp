@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:16:41 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/25 15:15:32 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:14:26 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
-#include <sstream>
 
 class Zombie {
 	private :
@@ -25,7 +24,7 @@ class Zombie {
 		
 		~Zombie();
 		
-		void		announce();
+		void		announce() const;
 		void		setName(std::string name);
 };
 

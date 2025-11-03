@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:32:36 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/01 16:08:37 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:24:46 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define HUMANA_HPP
 
 #include <iostream>
-#include <cstring>
+#include <string>
 #include "Weapon.hpp"
 
 class HumanA 
