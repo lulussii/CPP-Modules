@@ -1,32 +1,62 @@
-CC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude -g
-SRC_DIR = src
-OBJ_DIR = build
-
-SRCS = 	$(SRC_DIR)/main.cpp \
-		$(SRC_DIR)/Fixed.cpp
-	
-OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
-
 NAME = fixed
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude -g -MMD -MP
+SRC_DIR = src
+HEADER_DIR = include
+HEADER = $(HEADER_DIR)/Fixed.hpp
+
+SRC = $(SRC_DIR)/main.cpp\
+	$(SRC_DIR)/Fixed.cpp
+
+OBJ_DIR = objs
+OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
+HOT_PINK = \033[38;5;212m
+PINK = \033[38;5;198m
+PALE_PINK = \033[38;5;212m
+RESET = \033[0m
+
+TOTAL_FILES := $(words $(SRC))
+CURRENT_FILE = 0
+
+define progress_bar
+	@$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE) + 1))))
+	@$(eval PERCENT=$(shell echo $$(($(CURRENT_FILE) * 100 / $(TOTAL_FILES)))))
+	@printf "\r$(PINK)Compilation: [$(PALE_PINK)"
+	@for i in `seq 1 $(shell echo $$(($(PERCENT) / 5)))`; do printf "#"; done
+	@for i in `seq 1 $(shell echo $$((20 - $(PERCENT) / 5)))`; do printf " "; done
+	@printf "$(PINK)] %3d%% - %s$(RESET)" $(PERCENT) $<
+endef
+
+define complete_progress
+	@printf "\r$(PINK)Compilation: [$(PALE_PINK)####################$(PINK)] 100%%                                 $(RESET)\n"
+endef
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(call progress_bar)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) -o $@ $^
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CC) $(CPPFLAGS) -c $< -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+$(NAME): $(OBJ)
+	$(call complete_progress)
+	@echo "$(HOT_PINK)Création de l'executable $(NAME)...$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(HOT_PINK)Executable $(NAME) créée !$(RESET)"
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@echo "$(PINK)Suppression des fichiers objets...$(RESET)"
+	@rm -rf $(OBJ_DIR)
+	@echo "$(HOT_PINK)Fichiers objets supprimés !$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "$(PINK)Suppression de $(NAME)...$(RESET)"
+	@rm -f $(NAME)
+	@echo "$(HOT_PINK)$(NAME) supprimé !$(RESET)"
 
 re: fclean all
+
+-include $(OBJ:.o=.d)
 
 .PHONY: all clean fclean re

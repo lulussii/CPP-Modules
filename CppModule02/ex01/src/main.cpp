@@ -6,14 +6,14 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:29:26 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/30 13:55:47 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:57:52 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-int main( void ) 
+int main(void) 
 {
 	Fixed a;
 	Fixed const b( 10 );
@@ -31,5 +31,14 @@ int main( void )
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	std::cout << "\n--- Debug conversions ---" << std::endl;
+
+	std::cout << "Raw bits of a: " << a.getRawBits() << std::endl;
+	std::cout << "toFloat(a): " << a.toFloat() << std::endl;
+
+	std::cout << "Raw bits of c: " << c.getRawBits() << std::endl;
+	std::cout << "toFloat(c): " << c.toFloat() << std::endl;
+
 	return 0;
 }

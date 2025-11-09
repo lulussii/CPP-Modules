@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:12:59 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/30 13:52:59 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:48:10 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ Fixed::Fixed(const Fixed& src)
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
-	return ;
 }
 
 Fixed& Fixed::operator=(const Fixed& src)
