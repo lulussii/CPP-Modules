@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:29:26 by lserodon          #+#    #+#             */
-/*   Updated: 2025/11/09 12:01:44 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/11 10:06:31 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ int main(void)
 	std::cout << "\n=== INCREMENT / DECREMENT ===" << std::endl;
 	Fixed i;
 	std::cout << "i   = " << i << std::endl;
-	std::cout << "++i = " << ++i << std::endl; // pre-increment
+	std::cout << "++i = " << ++i << std::endl;
 	std::cout << "i   = " << i << std::endl;
-	std::cout << "i++ = " << i++ << std::endl; // post-increment
+	std::cout << "i++ = " << i++ << std::endl;
 	std::cout << "i   = " << i << std::endl;
-	std::cout << "--i = " << --i << std::endl; // pre-decrement
+	std::cout << "--i = " << --i << std::endl;
 	std::cout << "i   = " << i << std::endl;
-	std::cout << "i-- = " << i-- << std::endl; // post-decrement
+	std::cout << "i-- = " << i-- << std::endl;
 	std::cout << "i   = " << i << std::endl;
 
 	std::cout << "\n=== MIN / MAX FUNCTIONS ===" << std::endl;

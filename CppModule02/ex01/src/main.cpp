@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:29:26 by lserodon          #+#    #+#             */
-/*   Updated: 2025/11/09 11:57:52 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/11 10:10:58 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,21 @@ int main(void)
 	
 	a = Fixed( 1234.4321f );
 	
+	std::cout << "-------------------" << std::endl;
+	
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+	
+	std::cout << "-------------------" << std::endl;
 	
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-	std::cout << "\n--- Debug conversions ---" << std::endl;
+	std::cout << "-------------------" << std::endl;
 
 	std::cout << "Raw bits of a: " << a.getRawBits() << std::endl;
 	std::cout << "toFloat(a): " << a.toFloat() << std::endl;
