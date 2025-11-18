@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:44:08 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/31 11:27:31 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/17 11:50:30 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,41 @@
 
 int main(void)
 {
-	std::cout << "----- CONSTRUCTION ------" << std::endl;
+	std::cout << "\n===== CONSTUCTION =====" << std::endl;
 	
 	ScavTrap a;
 	ScavTrap b("Cody");
+	ScavTrap c(b);
+	ScavTrap d = a;
 
-	std::cout << "\n----- TESTING -----" << std::endl;
+	std::cout << "\n===== ATTACK_TESTS =====" << std::endl;
+
+	b.attack("Target1");
+	b.attack("Target2");
 	
-	a.attack("some other robot");
-	a.attack("some other other robot");
-	a.takeDamage(10);
-	b.beRepaired(10);
-	for (int i = 0; i < 4; i++)
-		b.attack("Cody-clone");
+	std::cout << "\n===== SPECIAL MODE =====" << std::endl;
+
 	b.guardGate();
 	
-	std::cout << "\n----- DECONSTRUCTION -----" << std::endl;
-	
-	return (0);
+    std::cout << "\n===== DAMAGE & DEATH =====\n" << std::endl;
+
+    a.takeDamage(30);
+    a.takeDamage(50);
+    a.takeDamage(40);
+
+    a.attack("Target while dead");
+    a.guardGate();
+
+    std::cout << "\n===== ENERGY DEPLETION =====\n" << std::endl;
+
+    ScavTrap e("NoEnergy");
+
+    for (int i = 0; i < 51; i++)
+        e.attack("wall");
+
+    e.guardGate();
+
+    std::cout << "\n===== END OF MAIN =====\n" << std::endl;
+
+    return 0;
 }

@@ -6,32 +6,48 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:44:08 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/31 11:46:06 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:26:41 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
-#include "../include/ScavTrap.hpp"
-#include "../include/FragTrap.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main()
+int main(void)
 {
-    std::cout << "----- CONSTRUCTION ------" << std::endl;
-	
-	FragTrap a;
-	FragTrap b("Cody");
+    std::cout << "\n===== CREATION =====\n" << std::endl;
 
-	std::cout << "\n----- TESTING -----" << std::endl;
-	
-	a.attack("some other robot");
-	a.attack("some other other robot");
-	a.takeDamage(10);
-	b.beRepaired(10);
-	for (int i = 0; i < 4; i++)
-		b.attack("Cody-clone");
-	b.highFivesGuys();
-	
-	std::cout << "\n----- DECONSTRUCTION -----" << std::endl;
-	
-	return (0);
+    FragTrap f1("Fraggy");
+    FragTrap f2(f1);
+    FragTrap f3;
+    f3 = f1;
+    
+    std::cout << "\n===== ATTACK TEST =====\n" << std::endl;
+
+    f1.attack("Target1");
+    f1.attack("Target2");
+
+    std::cout << "\n===== SPECIAL ABILITY =====\n" << std::endl;
+
+    f1.highFivesGuys();
+
+    std::cout << "\n===== DAMAGE & REPAIRS =====\n" << std::endl;
+
+    f1.takeDamage(20);
+    f1.beRepaired(10);
+    f1.takeDamage(50);
+    f1.beRepaired(20);
+
+    std::cout << "\n===== DEATH TEST =====\n" << std::endl;
+
+    f1.takeDamage(200);
+
+    f1.attack("Target3");
+    f1.beRepaired(10);
+    f1.highFivesGuys();
+
+    std::cout << "\n===== END OF MAIN =====\n" << std::endl;
+
+    return 0;
 }
+

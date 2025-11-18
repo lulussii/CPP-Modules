@@ -6,11 +6,11 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:14:23 by lserodon          #+#    #+#             */
-/*   Updated: 2025/07/31 13:55:54 by lserodon         ###   ########.fr       */
+/*   Updated: 2025/11/14 11:50:30 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
 #include <iostream>
