@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 10:50:55 by lserodon          #+#    #+#             */
-/*   Updated: 2025/12/08 17:15:18 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/11 10:50:46 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,9 +169,9 @@ void	convertInt(std::string &out)
 	if (value < INT_MIN || value > INT_MAX)
 		std::cout << "int: impossible" << std::endl;
 	else
-		std::cout << "int: " << static_cast<int>(value) << std::endl;
-	std::cout <<  "float: " << static_cast<float>(value) << ".0f" 	<< std::endl;
-	std::cout <<  "double: " << static_cast<double>(value) << ".0"	<< std::endl;
+		std::cout << "int: " 	<< static_cast<int>(value) 				<< std::endl;
+	std::cout << "float: " 	<< static_cast<float>(value) << ".0f" 	<< std::endl;
+	std::cout << "double: " << static_cast<double>(value) << ".0"	<< std::endl;
 }
 
 void	convertFloat(std::string &out)
