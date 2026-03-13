@@ -2,7 +2,7 @@
 #                               PROJECT CONFIG                                #
 # ************************************************************************** #
 
-NAME 		= identify
+NAME 		= easyfind
 
 CC 			= c++
 CFLAGS 		= -Wall -Wextra -Werror -std=c++98 -Iinclude -g -MMD -MP
@@ -10,14 +10,10 @@ CFLAGS 		= -Wall -Wextra -Werror -std=c++98 -Iinclude -g -MMD -MP
 SRC_DIR 	= src
 HEADER_DIR 	= include
 
-HEADER 		= $(HEADER_DIR)/Base.hpp			\
-			  $(HEADER_DIR)/A.hpp				\
-			  $(HEADER_DIR)/B.hpp				\
-			  $(HEADER_DIR)/C.hpp				
+HEADER 		= $(HEADER_DIR)/easyfind.hpp		\			
 
 
-SRC 		= $(SRC_DIR)/main.cpp 				\
-			  $(SRC_DIR)/Base.cpp
+SRC 		= $(SRC_DIR)/main.cpp
 
 OBJ_DIR 	= objs
 OBJ 		= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
