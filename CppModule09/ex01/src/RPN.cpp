@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:34:50 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/26 13:51:59 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/26 15:40:19 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,21 @@ void RPN::parseOperation(char *argv)
 				std::cout << "Error " << argv[i] << std::endl;
 				return ;
 			}
-			this->numbers.push(argv[i]);
+			this->numbers.push(argv[i] - '0');
 		}
-		else if (isOperator(argv[i]) != 0 && numbers.size() < 2)
+		else if (isOperator(argv[i]))
 		{
+			if (numbers.size() < 2)
+			{
+				std::cout << "Error : stack too small" << std::endl;
+				return ;
+			}
 			if (argv[i + 1] != ' ' && argv[i + 1] != '\0')
 			{
 				std::cout << "Error sign " << argv[i] << std::endl;
 				return ;
 			}
-			
+			calculateOperation(argv[i]);
 		}
 		else
 		{
@@ -51,9 +56,24 @@ void RPN::parseOperation(char *argv)
 			return ;
 		}
 	}
+	std::cout << numbers.top() << std::endl;
 }
 
-void	RPN::calculateOperation(void)
+void	RPN::calculateOperation(char sign)
 {
+	int temp = numbers.top();
+	int res;
+
+	numbers.pop();
 	
+	if (sign == '+')
+		res = temp + numbers.top();
+	else if (sign == '-')
+		res = numbers.top() - temp;
+	else if (sign == '/')
+		res = numbers.top() / temp;
+	else if (sign == '*')
+		res = numbers.top() * temp;
+	numbers.pop();
+	numbers.push(res);
 }
