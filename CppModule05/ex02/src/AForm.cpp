@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 09:52:41 by lserodon          #+#    #+#             */
-/*   Updated: 2026/02/13 10:14:56 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:59:53 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,8 @@ void	AForm::beSigned(Bureaucrat &signer)
 {
 	if (signer.getGrade() > this->_signGrade)
 		throw GradeTooLowException();
-	if (!_isSigned)
-	{
-		this->_isSigned = true;
-		std::cout << "AForm is signed by " << signer.getName() << std::endl;
-	}
-	else
-		std::cout << "AForm is already signed" << std::endl;
+	this->_isSigned = true;
+	std::cout << "AForm is signed by " << signer.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &a)
@@ -95,7 +90,7 @@ const char *AForm::GradeTooHighException::what(void) const throw()
 
 const char *AForm::IsNotSignedException::what(void) const throw()
 {
-	return ("form can't be executed because it is not signed !");
+	return ("form is not signed !");
 }
 
 void	AForm::execute(Bureaucrat const& executor) const

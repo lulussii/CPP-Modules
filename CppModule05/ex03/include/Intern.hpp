@@ -6,12 +6,12 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:29:24 by lserodon          #+#    #+#             */
-/*   Updated: 2025/12/05 15:15:15 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/09 17:00:57 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERN_HPP
-# define INTER_HPP
+# define INTERN_HPP
 
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"

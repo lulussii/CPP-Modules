@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:01:09 by lserodon          #+#    #+#             */
-/*   Updated: 2026/02/13 10:25:05 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/09 17:04:57 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout<< e.what() << '\n';
     }
 
     std::cout << "\n--- Test 2 : Presidential Pardon ---" << std::endl;
@@ -55,7 +55,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout<< e.what() << '\n';
     }
 
     std::cout << "\n--- Test 3 : Shrubbery Creation ---" << std::endl;
@@ -72,7 +72,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout<< e.what() << '\n';
     }
 
     std::cout << "\n--- Test 4 : Unknown Form ---" << std::endl;
@@ -84,7 +84,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout<< e.what() << '\n';
     }
 
     return 0;

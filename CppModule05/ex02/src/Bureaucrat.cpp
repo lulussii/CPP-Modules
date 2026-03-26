@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:01:07 by lserodon          #+#    #+#             */
-/*   Updated: 2026/02/13 10:20:10 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:59:16 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,16 @@ void  Bureaucrat::signForm(AForm &form)
 
 void	Bureaucrat::executeForm(AForm const &form) const
 {
-	form.execute(*this);
+	try
+	{
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << getName() << " couldn't execute " << form.getName()
+				  << " because " << e.what() << std::endl;
+	}
 }
 
 

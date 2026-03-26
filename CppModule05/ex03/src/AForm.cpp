@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 09:52:41 by lserodon          #+#    #+#             */
-/*   Updated: 2025/12/05 14:10:08 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:52:05 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ const char *AForm::GradeTooHighException::what(void) const throw()
 
 const char *AForm::IsNotSignedException::what(void) const throw()
 {
-	return ("form can't be executed because it is not signed !");
+	return ("it is not signed !");
 }
 
 void	AForm::execute(Bureaucrat const& executor) const
