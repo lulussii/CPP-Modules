@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:34:50 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/26 15:40:19 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/27 09:04:46 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void RPN::parseOperation(char *argv)
 			std::cout << "Error" << std::endl;
 			return ;
 		}
+	}
+	if (numbers.size() > 1)
+	{
+		std::cout << "Error" << std::endl;
+		return ;
 	}
 	std::cout << numbers.top() << std::endl;
 }

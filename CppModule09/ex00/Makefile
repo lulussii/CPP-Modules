@@ -10,7 +10,7 @@ CFLAGS 		= -Wall -Wextra -Werror -std=c++98 -Iinclude -g -MMD -MP
 SRC_DIR 	= src
 HEADER_DIR 	= include
 
-HEADER 		= $(HEADER_DIR)/BitcoinExchange.hpp		\			
+HEADER 		= $(HEADER_DIR)/BitcoinExchange.hpp		\
 
 
 SRC 		= $(SRC_DIR)/main.cpp					\

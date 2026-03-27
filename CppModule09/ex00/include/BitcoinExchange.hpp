@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:03:30 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/27 08:50:09 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/27 10:05:09 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class BitcoinExchange
 		
 		void	parseData();
 		void 	parseFile(char *argv);
+		void	displayLine(std::string date, float value);
 };
 
 class BadInputException : public std::exception
@@ -37,7 +38,7 @@ class BadInputException : public std::exception
 		std::string _message;
 
 	public:
-		BadInputException(const std::string &msg) : _message("Error: Bad input => " + msg) {}
+		BadInputException(const std::string &msg) : _message("Error: bad input => " + msg) {}
 		virtual ~BadInputException() throw() {}
 		virtual const char* what() const throw()
 		{
