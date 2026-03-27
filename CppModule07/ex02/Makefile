@@ -2,7 +2,7 @@
 #                               PROJECT CONFIG                                #
 # ************************************************************************** #
 
-NAME 		= whatever
+NAME 		= array
 
 CC 			= c++
 CFLAGS 		= -Wall -Wextra -Werror -std=c++98 -Iinclude -g -MMD -MP

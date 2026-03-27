@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.hpp                                          :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 10:31:36 by lserodon          #+#    #+#             */
-/*   Updated: 2026/02/25 17:57:49 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/18 14:43:17 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class Array {
 
 	class	OutOfBoundsException : public std::exception
 	{
-		public:
 			virtual const char* what() const throw()
 			{
 				return "Index out of bounds !";

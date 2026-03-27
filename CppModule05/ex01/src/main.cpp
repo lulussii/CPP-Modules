@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:01:09 by lserodon          #+#    #+#             */
-/*   Updated: 2026/02/13 09:55:56 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:31:48 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,6 @@ int main()
 
 		b2.signForm(f5);
 		std::cout << f5 << std::endl;
-	} catch (std::exception &e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-
-	std::cout << "----- TEST 6 : Signing an already signed form -----\n" << std::endl;
-	try {
-		Bureaucrat b3("Charlie", 10);
-		Form f6("StandardForm", 50, 20);
-
-		b3.signForm(f6);
-		b3.signForm(f6);
 	} catch (std::exception &e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
