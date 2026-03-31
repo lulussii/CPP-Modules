@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 13:05:42 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/30 13:36:39 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/03/31 10:02:11 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ class PmergeMe
 		std::clock_t		vectorStart;
 		std::clock_t		dequeStart;
 
+		PmergeMe(const PmergeMe &other);
+		PmergeMe &operator=(const PmergeMe &other);
+
 	public :
+		PmergeMe();
+		~PmergeMe();
+		
 		void	parseNumbers(int argc, char **argv);
 		void	vectorFordJohnsonAlgo();
 		void	dequeFordJohnsonAlgo();

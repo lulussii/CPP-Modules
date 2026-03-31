@@ -13,7 +13,7 @@ HEADER_DIR 	= include
 HEADER 		= $(HEADER_DIR)/PmergeMe.hpp		\
 
 
-SRC 		= $(SRC_DIR)/main.cpp		\
+SRC 		= $(SRC_DIR)/main.cpp				\
 			  $(SRC_DIR)/PmergeMe.cpp
 
 OBJ_DIR 	= objs
