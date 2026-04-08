@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 08:55:53 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/13 13:37:15 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/08 20:07:31 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main(void)
 	std::cout << "\n---- TEST 3 : Adding 15,000 numbers at once ----" << std::endl;
 	try {
 		Span sp(15000);
-		std::vector<int> bigData;
+		std::list<int> bigData;
 
 		std::srand(std::time(0));
 		for (int i = 0; i < 15000; ++i)

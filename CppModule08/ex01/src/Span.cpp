@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:57:48 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/13 13:42:19 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/08 20:17:44 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,6 @@ void	Span::addNumber(int number)
 	_storage.push_back(number);
 }
 
-void	Span::addRangeofNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-{
-	unsigned int distance = std::distance(begin, end);
-
-		if (_storage.size() + distance > _n)
-			throw std::out_of_range ("Error: Storage capacity exceeded");
-
-		_storage.insert(_storage.end(), begin, end);
-}
-
 unsigned int Span::shortestSpan()
 {
 	if (_storage.size() <= 1)
@@ -61,7 +51,7 @@ unsigned int Span::shortestSpan()
 
 	unsigned int min_diff = _storage[1] - _storage[0];
 	
-	for (size_t i = 1; i < _storage.size(); i++)
+	for (size_t i = 1; i < _storage.size() - 1; i++)
 	{
 		unsigned int current_diff = _storage[i + 1] - _storage[i];
 		if (current_diff < min_diff)

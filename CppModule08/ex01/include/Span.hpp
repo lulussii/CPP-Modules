@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 08:56:02 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/13 13:40:17 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/08 20:07:00 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,19 @@ class Span
 	Span &operator=(const Span &other);
 
 	void	addNumber(int number);
-	void	addRangeofNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
 	unsigned int	shortestSpan();
 	unsigned int	longestSpan();
+
+	template <typename It>
+	void	addRangeofNumbers(It begin, It end)
+	{
+		unsigned int distance = std::distance(begin, end);
+
+			if (_storage.size() + distance > _n)
+				throw std::out_of_range ("Error: Storage capacity exceeded");
+		_storage.insert(_storage.end(), begin, end);
+	}
 };
 
 #endif
