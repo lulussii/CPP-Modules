@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 08:55:53 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/13 09:52:36 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/09 13:04:59 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 
 	try {
 		std::vector<int>::iterator it = easyfind(v, 4);
-		std::cout << "Found:" << *it << "!" << std::endl;
+		std::cout << "Found: " << *it << "!" << std::endl;
 	}
 	catch (const std::exception& e)
 	{
