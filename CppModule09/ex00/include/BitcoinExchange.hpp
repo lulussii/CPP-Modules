@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:03:30 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/27 10:05:09 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:47:38 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class BitcoinExchange
 	private :
 		std::map<std::string, float> data;
 		BitcoinExchange(const BitcoinExchange &other);
-		BitcoinExchange operator=(const BitcoinExchange &other);
+		BitcoinExchange &operator=(const BitcoinExchange &other);
 		
 	public :
 		BitcoinExchange();

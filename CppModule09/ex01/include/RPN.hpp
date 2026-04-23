@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:35:03 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/26 15:25:42 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:35:53 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <stack>
 #include <iostream>
+#include <stdexcept>
+#include <climits>
 
 class RPN
 {

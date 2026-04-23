@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 13:06:31 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/31 10:17:22 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:44:33 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main (int argc, char **argv)
 {
 	PmergeMe mergeMe;
 
-	if (argc < 2)
+	if (argc <= 2)
 	{
 		std::cout << "The program needs at least 2 numbers" << std::endl;
 		return (1);

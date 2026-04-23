@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:05:00 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/27 10:10:35 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:53:03 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 int main(int argc, char **argv)
 {
 	BitcoinExchange btc;
-	(void) argv;
 	if (argc != 2)
 		std::cout << "The program needs one argument" << std::endl;
 	else
@@ -33,4 +32,5 @@ int main(int argc, char **argv)
 			std::cout << e.what() << std::endl;
 		}
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:34:50 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/31 09:55:23 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:39:35 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void RPN::parseOperation(char *argv)
 		{
 			if (argv[i + 1] != ' ')
 			{		
-				std::cout << "Error " << argv[i] << std::endl;
+				std::cout << "Error " << std::endl;
 				return ;
 			}
 			this->numbers.push(argv[i] - '0');
@@ -45,7 +45,7 @@ void RPN::parseOperation(char *argv)
 			}
 			if (argv[i + 1] != ' ' && argv[i + 1] != '\0')
 			{
-				std::cout << "Error sign " << argv[i] << std::endl;
+				std::cout << "Error sign : " << argv[i] << std::endl;
 				return ;
 			}
 			calculateOperation(argv[i]);
@@ -71,14 +71,33 @@ void	RPN::calculateOperation(char sign)
 
 	numbers.pop();
 	
-	if (sign == '+')
-		res = temp + numbers.top();
-	else if (sign == '-')
-		res = numbers.top() - temp;
-	else if (sign == '/')
-		res = numbers.top() / temp;
-	else if (sign == '*')
-		res = numbers.top() * temp;
+	if (sign == '/' && temp == 0)
+		throw std::runtime_error("Error: division by zero");
+
+	int top = numbers.top();
+		
+	if (sign == '+') {
+		if ((temp > 0 && top > INT_MAX - temp) ||
+			(temp < 0 && top < INT_MIN - temp))
+			throw std::runtime_error("Error: integer overflow");
+		res = top + temp;
+	}
+	else if (sign == '-') {
+		if ((temp < 0 && top > INT_MAX + temp) ||
+			(temp > 0 && top < INT_MIN + temp))
+			throw std::runtime_error("Error: integer overflow");
+		res = top - temp;
+	}
+	else if (sign == '/') {
+		if (top == INT_MIN && temp == -1)
+			throw std::runtime_error("Error: integer overflow");
+		res = top / temp;
+	}
+	else if (sign == '*') {
+		if (temp != 0 && (top > INT_MAX / temp || top < INT_MIN / temp))
+			throw std::runtime_error("Error: integer overflow");
+		res = top * temp;
+	}
 	numbers.pop();
 	numbers.push(res);
 }

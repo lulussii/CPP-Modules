@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:03:32 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/27 10:10:57 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:55:01 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void BitcoinExchange::parseData(void)
 {
 	std::ifstream file("data.csv");
 	if (!file)
-		throw std::runtime_error("Error: Data file don't exist");
+		throw std::runtime_error("Error: Data file doesn't exist");
 
 	std::string line;
 	std::getline(file, line);
@@ -63,7 +63,7 @@ void	splitDate(std::string date)
 	int month = StringtoInt(date.substr(5, 2));
 	int day = StringtoInt(date.substr(8, 2));
 
-	if (year < 2009)
+	if (year < 2009 || (year == 2009 && month == 1 && day < 2))
 		throw BadInputException(date);
 	if (month < 1 || month > 12)
 		throw BadInputException(date);
@@ -71,7 +71,7 @@ void	splitDate(std::string date)
 	int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int maxDays = daysInMonth[month];
 	
-	if (month == 2 && (year % 4) == 0)
+	if (month == 2 && (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)))
 		maxDays = 29;
 		
 	if (day < 1 || day > maxDays)
@@ -109,7 +109,7 @@ void BitcoinExchange::displayLine(std::string date, float value)
 	std::map<std::string, float>::iterator it = this->data.lower_bound(date);
 
 	if (it == this->data.begin() && it->first != date)
-		throw std::runtime_error ("Error: date too old" + date);
+		throw std::runtime_error ("Error: date too old " + date);
 	if (it == this->data.end() || it->first != date)
 		--it;
 
