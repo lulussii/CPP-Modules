@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 13:06:16 by lserodon          #+#    #+#             */
-/*   Updated: 2026/03/31 10:15:56 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/06 10:20:51 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,9 @@ std::vector<int>	generateJacobsthal(size_t maxSize)
 
 	int prev = 3;
 	int current = 5;
-	int next = 0;
-	while((size_t)current < maxSize)
+	while((size_t)current <= maxSize)
 	{
-		next = current + 2 * prev;
+		int next = current + 2 * prev;
 		seq.push_back(next);
 		prev = current;
 		current = next;
@@ -168,18 +167,15 @@ void PmergeMe::vectorFordJohnsonAlgo(void)
 			pairs.push_back(std::make_pair(b, a));
 	}
 	vectorSortPairs(pairs);
+	
 	std::vector<int> mainChain;
 	std::vector<int> pend;
+	
 	mainChain.push_back(pairs[0].second);
-	mainChain.push_back(pairs[0].first);
-
-	for (size_t i = 1; i < pairs.size(); i++)
-	{
+	for (size_t i = 0; i < pairs.size(); i++)
 		mainChain.push_back(pairs[i].first);
+	for (size_t i = 1; i < pairs.size(); i++)
 		pend.push_back(pairs[i].second);
-	}
-	if (hasStraggler == true)
-		pend.push_back(straggler);
 		
 	int lastPos = 1;
 	std::vector<int> jacobSequence = generateJacobsthal(pend.size());
@@ -191,12 +187,18 @@ void PmergeMe::vectorFordJohnsonAlgo(void)
 		for (int j = currentGoal; j > lastPos; j--)
 		{
 			int valueToInsert = pend[j - 2];
-
-			std::vector<int>::iterator insertPos = std::lower_bound(mainChain.begin(), mainChain.end(), valueToInsert);
+			int boundValue = pairs[j - 1].first;
+			std::vector<int>::iterator bound = std::lower_bound(mainChain.begin(), mainChain.end(), boundValue);
+			std::vector<int>::iterator insertPos = std::lower_bound(mainChain.begin(), bound, valueToInsert);
 
 			mainChain.insert(insertPos, valueToInsert);
 		}
 		lastPos = currentGoal;
+	}
+	if (hasStraggler)
+	{
+    	std::vector<int>::iterator insertPos = std::lower_bound(mainChain.begin(), mainChain.end(), straggler);
+   		mainChain.insert(insertPos, straggler);
 	}
 	this->vectorContainer = mainChain;
 }
@@ -271,19 +273,16 @@ void PmergeMe::dequeFordJohnsonAlgo(void)
 			pairs.push_back(std::make_pair(b, a));
 	}
 	dequeSortPairs(pairs);
+	
 	std::deque<int> mainChain;
 	std::deque<int> pend;
+	
 	mainChain.push_back(pairs[0].second);
-	mainChain.push_back(pairs[0].first);
-
-	for (size_t i = 1; i < pairs.size(); i++)
-	{
+	for (size_t i = 0; i < pairs.size(); i++)
 		mainChain.push_back(pairs[i].first);
+	for (size_t i = 1; i < pairs.size(); i++)
 		pend.push_back(pairs[i].second);
-	}
-	if (hasStraggler == true)
-		pend.push_back(straggler);
-		
+
 	int lastPos = 1;
 	std::vector<int> jacobSequence = generateJacobsthal(pend.size());
 	for (size_t i = 0; i < jacobSequence.size(); i++)
@@ -294,12 +293,18 @@ void PmergeMe::dequeFordJohnsonAlgo(void)
 		for (int j = currentGoal; j > lastPos; j--)
 		{
 			int valueToInsert = pend[j - 2];
-
-			std::deque<int>::iterator insertPos = std::lower_bound(mainChain.begin(), mainChain.end(), valueToInsert);
+			int boundValue = pairs[j - 1].first;
+			std::deque<int>::iterator bound = std::lower_bound(mainChain.begin(), mainChain.end(), boundValue);
+			std::deque<int>::iterator insertPos = std::lower_bound(mainChain.begin(), bound, valueToInsert);
 
 			mainChain.insert(insertPos, valueToInsert);
 		}
 		lastPos = currentGoal;
+	}
+	if (hasStraggler)
+	{
+    	std::deque<int>::iterator insertPos = std::lower_bound(mainChain.begin(), mainChain.end(), straggler);
+   		mainChain.insert(insertPos, straggler);
 	}
 	this->dequeContainer = mainChain;
 }
