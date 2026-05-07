@@ -6,11 +6,24 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:34:50 by lserodon          #+#    #+#             */
-/*   Updated: 2026/04/23 16:39:35 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/07 13:20:38 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+
+RPN::RPN() {}
+
+RPN::~RPN() {}
+
+RPN::RPN(const RPN &other) : numbers(other.numbers) {}
+
+RPN &RPN::operator=(const RPN &other)
+{
+	if (this != &other)
+		this->numbers = other.numbers;
+	return (*this);
+}
 
 int isOperator(char c)
 {
