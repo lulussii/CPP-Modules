@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:35:03 by lserodon          #+#    #+#             */
-/*   Updated: 2026/05/07 13:20:11 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:24:01 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class RPN
 {
 	private :
-		std::stack<int>		numbers;
+		std::stack<double>		numbers;
 		RPN(const RPN &other);
 		RPN &operator=(const RPN &other);
 		

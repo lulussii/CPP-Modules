@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:03:32 by lserodon          #+#    #+#             */
-/*   Updated: 2026/05/06 09:06:38 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:22:33 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,19 @@ void checkDate(std::string date)
 
 float checkValue(std::string str)
 {
+	bool 	hasDigit = false;
+	int		dotCount = 0;
 	for (size_t i = 0; i < str.length(); i++)
 	{
+		if (isdigit(str[i]))
+			hasDigit = true;
+		if (str[i] == '.')
+			dotCount++;
 		if ((isdigit(str[i]) == 0) && str[i] != '.')
 			throw BadInputException(str);
 	}
+	if (hasDigit == false || dotCount > 1)
+		throw BadInputException(str);
 	float value = static_cast<float>(std::atof(str.c_str()));
 	if (value < 0)
 		throw std::runtime_error("Error: not a positive number.");

@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:34:50 by lserodon          #+#    #+#             */
-/*   Updated: 2026/05/07 13:20:38 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:26:07 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,15 @@ void RPN::parseOperation(char *argv)
 
 void	RPN::calculateOperation(char sign)
 {
-	int temp = numbers.top();
-	int res;
+	double 	temp = numbers.top();
+	double	res;
 
 	numbers.pop();
 	
 	if (sign == '/' && temp == 0)
 		throw std::runtime_error("Error: division by zero");
 
-	int top = numbers.top();
+	double top = numbers.top();
 		
 	if (sign == '+') {
 		if ((temp > 0 && top > INT_MAX - temp) ||
