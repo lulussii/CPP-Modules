@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 12:34:50 by lserodon          #+#    #+#             */
-/*   Updated: 2026/05/18 12:26:07 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/20 14:03:13 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int isOperator(char c)
 void RPN::parseOperation(char *argv)
 {
 	std::string operation = argv;
-	
+
 	for (size_t i = 0; i < operation.size(); i++)
 	{
 		if (argv[i] == ' ')
@@ -44,7 +44,7 @@ void RPN::parseOperation(char *argv)
 		{
 			if (argv[i + 1] != ' ')
 			{		
-				std::cout << "Error " << std::endl;
+				std::cerr << "Error " << std::endl;
 				return ;
 			}
 			this->numbers.push(argv[i] - '0');
@@ -53,25 +53,25 @@ void RPN::parseOperation(char *argv)
 		{
 			if (numbers.size() < 2)
 			{
-				std::cout << "Error : stack too small" << std::endl;
+				std::cerr << "Error : stack too small" << std::endl;
 				return ;
 			}
 			if (argv[i + 1] != ' ' && argv[i + 1] != '\0')
 			{
-				std::cout << "Error sign : " << argv[i] << std::endl;
+				std::cerr << "Error sign : " << argv[i] << std::endl;
 				return ;
 			}
 			calculateOperation(argv[i]);
 		}
 		else
 		{
-			std::cout << "Error" << std::endl;
+			std::cerr << "Error" << std::endl;
 			return ;
 		}
 	}
-	if (numbers.size() > 1)
+	if (numbers.size() != 1)
 	{
-		std::cout << "Error" << std::endl;
+		std::cerr << "Error" << std::endl;
 		return ;
 	}
 	std::cout << numbers.top() << std::endl;

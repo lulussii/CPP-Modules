@@ -6,7 +6,7 @@
 /*   By: lserodon <lserodon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 13:06:16 by lserodon          #+#    #+#             */
-/*   Updated: 2026/05/06 10:20:51 by lserodon         ###   ########.fr       */
+/*   Updated: 2026/05/20 14:04:25 by lserodon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -314,11 +314,6 @@ void	PmergeMe::printBefore(void)
 	std::cout << "Before:  ";
 	for (int i = 0; i < (int)vectorContainer.size(); i++)
 	{
-		if (i > 4)
-		{
-			std::cout << "[...]";
-			break;
-		}
 		std::cout << vectorContainer[i] << " ";
 	}
 	std::cout << std::endl;
@@ -329,11 +324,6 @@ void	PmergeMe::printAfter()
 	std::cout << "After:   ";
 	for (int i = 0; i < (int)vectorContainer.size(); i++)
 	{
-		if (i > 4)
-		{
-			std::cout << "[...]";
-			break;
-		}
 		std::cout << vectorContainer[i] << " ";
 	}
 	std::cout << std::endl;
